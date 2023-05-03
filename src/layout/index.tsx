@@ -61,14 +61,9 @@ const MainLayout = () => {
           },
         }}
       >
-        <Button onClick={() => dispatch(sidebarToggleHandler())}>temp</Button>
-        <Grid item xs>
-          <CustomPaper>
-            <Grid item xs={6}></Grid>
-          </CustomPaper>
-        </Grid>
         <MainContainer />
       </Grid>
+      <Button onClick={() => dispatch(sidebarToggleHandler())}>temp</Button>
     </Grid>
   );
 };
