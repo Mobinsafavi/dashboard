@@ -3,25 +3,35 @@ import { createTheme } from "@mui/material/styles";
 const dashboardTheme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
+      main: "rgb(52, 71, 103)",
     },
     secondary: {
-      main: '#dc004e',
+      main: "rgb(103, 116, 142)",
+    },
+    error: {
+      main: "rgb(234, 6, 6)",
+    },
+    success: {
+      main: "rgb(130, 214, 22)",
+    },
+    info: {
+      main: "#FFFFFF",
     },
   },
   typography: {
-    fontFamily: [
-      'Roboto',
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
+    h5: {
+      fontSize: "2rem",
+    },
+    h6: {
+      fontSize: "1.6rem",
+    },
+    body1: {
+      fontSize: "1.4rem",
+    },
+    caption: {
+      fontSize: "1.2rem",
+    },
   },
 });
 
-export default dashboardTheme
+export default dashboardTheme;

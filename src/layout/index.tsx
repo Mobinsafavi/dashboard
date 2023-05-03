@@ -4,6 +4,7 @@ import {
   Collapse,
   Grid,
   Theme,
+  Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
@@ -15,6 +16,10 @@ import { useAppSelector, useAppDispatch } from "../hooks/storeHook";
 import { sidebarToggleHandler } from "../store/sidebar/sidebarSlice";
 import { makeStyles } from "@mui/styles";
 import dashboardTheme from "../constants/theme";
+import CustomButton from "../components/common/CustomButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import CustomPaper from "../components/common/CustomPaper";
 
 const useStyles = makeStyles((theme: Theme) => ({
   gridItem: {
@@ -31,7 +36,7 @@ const MainLayout = () => {
   const isSidebarOpen = useAppSelector((state) => state.sidebar.isOpen);
 
   return (
-    <Grid container spacing={4}>
+    <Grid container xs={12} spacing={4}>
       <Grid
         item
         className={classes.gridItem}
@@ -50,13 +55,20 @@ const MainLayout = () => {
         sx={{
           width: {
             xs: `100% `,
-            sm: `${isSidebarOpen ? `${(100 / 12) * 10}%` : `${(100 / 12) * 11}%`}`,
+            sm: `${
+              isSidebarOpen ? `${(100 / 12) * 10}%` : `${(100 / 12) * 11}%`
+            }`,
           },
         }}
       >
+        <Button onClick={() => dispatch(sidebarToggleHandler())}>temp</Button>
+        <Grid item xs>
+          <CustomPaper>
+            <Grid item xs={6}></Grid>
+          </CustomPaper>
+        </Grid>
         <MainContainer />
       </Grid>
-      <Button onClick={() => dispatch(sidebarToggleHandler())}>temp</Button>
     </Grid>
   );
 };
