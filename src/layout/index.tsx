@@ -1,25 +1,10 @@
-import {
-  Box,
-  Button,
-  Collapse,
-  Grid,
-  Theme,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
-import { useState } from "react";
+import { Button, Grid, Theme } from "@mui/material";
 
 import MainContainer from "./mainContainer";
 import Sidebar from "./Sidebar";
 import { useAppSelector, useAppDispatch } from "../hooks/storeHook";
 import { sidebarToggleHandler } from "../store/sidebar/sidebarSlice";
 import { makeStyles } from "@mui/styles";
-import dashboardTheme from "../constants/theme";
-import CustomButton from "../components/common/CustomButton";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import CustomPaper from "../components/common/CustomPaper";
 
 const useStyles = makeStyles((theme: Theme) => ({
   gridItem: {
@@ -32,7 +17,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const MainLayout = () => {
   const classes = useStyles();
-  const dispatch = useAppDispatch();
   const isSidebarOpen = useAppSelector((state) => state.sidebar.isOpen);
 
   return (
@@ -63,7 +47,6 @@ const MainLayout = () => {
       >
         <MainContainer />
       </Grid>
-      <Button onClick={() => dispatch(sidebarToggleHandler())}>temp</Button>
     </Grid>
   );
 };

@@ -1,4 +1,4 @@
-import { Breadcrumbs, Grid, TextField, Typography } from "@mui/material";
+import { Grid, IconButton, TextField, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -8,8 +8,12 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import CustomBreadCrumb from "../../components/common/CustomBreadCrumb";
+import { sidebarToggleHandler } from "../../store/sidebar/sidebarSlice";
+import { useAppDispatch } from "../../hooks/storeHook";
 
 const Header = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <Grid container sx={{ backgroundColor: "info" }}>
       <Grid item container xs={6}>
@@ -38,11 +42,13 @@ const Header = () => {
             xs={3}
             sx={{ justifyContent: " center", alignItems: "center" }}
           >
-            <FontAwesomeIcon
-              size="2xl"
-              color="rgb(52, 71, 103)"
-              icon={faBars}
-            />
+            <IconButton
+              color="primary"
+              component="label"
+              onClick={() => dispatch(sidebarToggleHandler())}
+            >
+              <FontAwesomeIcon size="lg" icon={faBars} />
+            </IconButton>
           </Grid>
         </Grid>
       </Grid>
