@@ -42,7 +42,11 @@ const Sidebar = () => {
         component="nav"
         aria-labelledby="nested-list-subheader"
         subheader={
-          <ListSubheader component="div" id="nested-list-subheader">
+          <ListSubheader
+            component="div"
+            sx={{ backgroundColor: "inherit" }}
+            id="nested-list-subheader"
+          >
             App Sidebar
           </ListSubheader>
         }
@@ -55,9 +59,9 @@ const Sidebar = () => {
                   {item.children.map((subItem) => (
                     <NavLink
                       to={item.href}
-                      className={({ isActive, isPending }) =>
-                        isActive ? style["active-link"] : style["sidebar-link"]
-                      }
+                      // className={({ isActive, isPending }) =>
+                      //   isActive ? style["active-link"] : style["sidebar-link"]
+                      // }
                     >
                       <ListItemButton sx={{ pl: 4 }}>
                         <ListItemIcon>{subItem.icon}</ListItemIcon>
@@ -81,12 +85,15 @@ const Sidebar = () => {
                   isActive ? style["active-link"] : style["sidebar-link"]
                 }
               >
-                <ListItemButton>
-                  <Box bgcolor="white">
+                <ListItemButton
+                  sx={{ my: 1 }}
+                  className={style["sidebar-list-item"]}
+                >
+                  <Box>
                     <ListItemIcon>{item.icon}</ListItemIcon>
                   </Box>
                   <ListItemText>
-                    <Typography variant="body1" className="font-weight-medium">
+                    <Typography variant="body1" className="font-weight-bold">
                       {item.name}
                     </Typography>
                   </ListItemText>
