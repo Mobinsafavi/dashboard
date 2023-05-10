@@ -1,10 +1,9 @@
-import { Button, Grid, Theme } from "@mui/material";
+import { Grid, Theme } from "@mui/material";
 
 import MainContainer from "./mainContainer";
-import Sidebar from "./Sidebar";
-import { useAppSelector, useAppDispatch } from "../hooks/storeHook";
-import { sidebarToggleHandler } from "../store/sidebar/sidebarSlice";
+import { useAppSelector } from "../hooks/storeHook";
 import { makeStyles } from "@mui/styles";
+import Sidebar from "./sidebar";
 
 const useStyles = makeStyles((theme: Theme) => ({
   gridItem: {

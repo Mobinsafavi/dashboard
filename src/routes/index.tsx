@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { ErrorPage } from "../pages/CustomError";
 import React from "react";
-import Temp from "../pages/temp";
+import ContactUs from "../pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -11,8 +11,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "temp",
-        element: <Temp />,
+        path: "contact-us",
+        element: <ContactUs />,
       },
     ],
   },

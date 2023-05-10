@@ -1,4 +1,4 @@
-const Temp = () => {
+const ContactUs = () => {
   return (
     <div>
       test contenttest contenttest contenttest contenttest contenttest
@@ -8,4 +8,4 @@ const Temp = () => {
   );
 };
 
-export default Temp;
+export default ContactUs;
