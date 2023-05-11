@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Collapse,
@@ -8,32 +9,16 @@ import {
   ListSubheader,
   Typography,
 } from "@mui/material";
-import { Children } from "../../config/types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeadphones, faInfo } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import style from "./Sidebar.module.scss";
-
-interface ISidebarData {
-  name: string;
-  href: string;
-  icon: Children;
-  children?: ISidebarData[];
-}
+import sidebarData from "./constant/sidebarData";
 
 const Sidebar = () => {
-  const sidebarData: ISidebarData[] = [
-    {
-      name: "Contact Us",
-      href: "/contact-us",
-      icon: <FontAwesomeIcon icon={faHeadphones} />,
-    },
-    {
-      name: "About Us",
-      href: "/about-us",
-      icon: <FontAwesomeIcon icon={faInfo} />,
-    },
-  ];
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
 
   return (
     <Box>
@@ -54,34 +39,79 @@ const Sidebar = () => {
         <>
           {sidebarData.map((item) => {
             return item.children ? (
-              <Collapse timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                  {item.children.map((subItem) => (
-                    <NavLink
-                      to={item.href}
-                      // className={({ isActive, isPending }) =>
-                      //   isActive ? style["active-link"] : style["sidebar-link"]
-                      // }
-                    >
-                      <ListItemButton sx={{ pl: 4 }}>
-                        <ListItemIcon>{subItem.icon}</ListItemIcon>
-                        <ListItemText>
-                          <Typography
-                            variant="body1"
-                            className="font-weight-medium"
+              <>
+                <Box className={style["sidebar-link"]}>
+                  <ListItemButton
+                    sx={{ my: 1 }}
+                    className={style["sidebar-list-item"]}
+                    onClick={handleClick}
+                  >
+                    <Box className={style["icon-container"]}>
+                      <ListItemIcon
+                        sx={{
+                          minWidth: "3.2rem !important",
+                          aspectRatio: "1",
+                          justifyContent: "center",
+                          alignItems: "center",
+                        }}
+                      >
+                        {item.icon}
+                      </ListItemIcon>
+                    </Box>
+                    <ListItemText sx={{ marginLeft: "1.2rem" }}>
+                      <Typography variant="body1" className="font-weight-bold">
+                        {item.name}
+                      </Typography>
+                    </ListItemText>
+                  </ListItemButton>
+                </Box>
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                  <List component="div" disablePadding>
+                    {item.children.map((subItem) => {
+                      return subItem.href ? (
+                        <NavLink
+                          to={subItem.href}
+                          className={({ isActive }) =>
+                            isActive
+                              ? style["active-link"]
+                              : style["sidebar-link"]
+                          }
+                        >
+                          <ListItemButton
+                            sx={{ my: 1, pl: 4 }}
+                            className={style["sidebar-list-item"]}
                           >
-                            {subItem.name}
-                          </Typography>
-                        </ListItemText>
-                      </ListItemButton>
-                    </NavLink>
-                  ))}
-                </List>
-              </Collapse>
-            ) : (
+                            <Box className={style["icon-container"]}>
+                              <ListItemIcon
+                                sx={{
+                                  minWidth: "3.2rem !important",
+                                  aspectRatio: "1",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                }}
+                              >
+                                {subItem.icon}
+                              </ListItemIcon>
+                            </Box>
+                            <ListItemText sx={{ marginLeft: "1.2rem" }}>
+                              <Typography
+                                variant="body1"
+                                className="font-weight-bold"
+                              >
+                                {subItem.name}
+                              </Typography>
+                            </ListItemText>
+                          </ListItemButton>
+                        </NavLink>
+                      ) : null;
+                    })}
+                  </List>
+                </Collapse>
+              </>
+            ) : !item.children && item.href ? (
               <NavLink
                 to={item.href}
-                className={({ isActive, isPending }) =>
+                className={({ isActive }) =>
                   isActive ? style["active-link"] : style["sidebar-link"]
                 }
               >
@@ -89,17 +119,26 @@ const Sidebar = () => {
                   sx={{ my: 1 }}
                   className={style["sidebar-list-item"]}
                 >
-                  <Box>
-                    <ListItemIcon>{item.icon}</ListItemIcon>
+                  <Box className={style["icon-container"]}>
+                    <ListItemIcon
+                      sx={{
+                        minWidth: "3.2rem !important",
+                        aspectRatio: "1",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      {item.icon}
+                    </ListItemIcon>
                   </Box>
-                  <ListItemText>
+                  <ListItemText sx={{ marginLeft: "1.2rem" }}>
                     <Typography variant="body1" className="font-weight-bold">
                       {item.name}
                     </Typography>
                   </ListItemText>
                 </ListItemButton>
               </NavLink>
-            );
+            ) : null;
           })}
         </>
       </List>

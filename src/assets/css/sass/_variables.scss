@@ -1,5 +1,6 @@
 $theme-color-alice-blue: #f8f9fa;
 $theme-color-white: #ffffff;
+$theme-color-vivid-cyan : rgb(23, 193, 232);
 
 
 $theme-color-primary: rgb(52, 71, 103);
@@ -11,25 +12,21 @@ $theme-color-primary-gradiant: linear-gradient(
   rgb(33, 82, 255),
   rgb(33, 212, 253)
 );
-
 $theme-color-secondary-gradiant: linear-gradient(
   310deg,
   rgb(20, 23, 39),
   rgb(58, 65, 111)
 );
-
 $theme-color-success-gradiant: linear-gradient(
   310deg,
   rgb(23, 173, 55),
   rgb(152, 236, 45)
 );
-
 $theme-color-error-gradiant: linear-gradient(
   310deg,
   rgb(234, 6, 6),
   rgb(255, 102, 124)
 );
-
 $theme-color-warning-gradiant: linear-gradient(
   310deg,
   rgb(245, 57, 57),
