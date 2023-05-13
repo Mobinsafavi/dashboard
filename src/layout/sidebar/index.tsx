@@ -59,7 +59,10 @@ const Sidebar = () => {
                       </ListItemIcon>
                     </Box>
                     <ListItemText sx={{ marginLeft: "1.2rem" }}>
-                      <Typography variant="body1" className="font-weight-bold">
+                      <Typography
+                        variant="body1"
+                        className="font-weight-medium"
+                      >
                         {item.name}
                       </Typography>
                     </ListItemText>
@@ -96,7 +99,7 @@ const Sidebar = () => {
                             <ListItemText sx={{ marginLeft: "1.2rem" }}>
                               <Typography
                                 variant="body1"
-                                className="font-weight-bold"
+                                className="font-weight-medium"
                               >
                                 {subItem.name}
                               </Typography>
@@ -132,7 +135,7 @@ const Sidebar = () => {
                     </ListItemIcon>
                   </Box>
                   <ListItemText sx={{ marginLeft: "1.2rem" }}>
-                    <Typography variant="body1" className="font-weight-bold">
+                    <Typography variant="body1" className="font-weight-medium">
                       {item.name}
                     </Typography>
                   </ListItemText>
