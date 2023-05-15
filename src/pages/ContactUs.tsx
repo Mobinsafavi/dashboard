@@ -1,4 +1,4 @@
-import CustomPaper from "../components/common/CustomPaper";
+/*import CustomPaper from "../components/common/CustomPaper";
 import { Controller, useForm } from "react-hook-form";
 import { TextField } from "@mui/material";
 import { ContactUsSchema } from "../helpers/validations/schemas/ContactUsSchema";
@@ -46,4 +46,36 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default ContactUs;*/
+
+import { FormProvider, useForm } from "react-hook-form";
+import FormInput from "../components/common/CustomTextField";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { ContactUsSchema } from "../helpers/validations/schemas/ContactUsSchema";
+import * as yup from "yup";
+interface FormData {
+  name: string;
+  trips: string;
+  airline: string;
+}
+
+const MyForm = () => {
+  const methods = useForm<FormData>({
+    mode: "all",
+    resolver: yupResolver(ContactUsSchema),
+  });
+  const onSubmit = (data: FormData) => console.log(data);
+
+  return (
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onSubmit)}>
+        <FormInput name="name" label="name" />
+        <FormInput name="trips" label="trips" />
+        <FormInput name="airline" label="airline" />
+        <button type="submit">Submit</button>
+      </form>
+    </FormProvider>
+  );
+};
+
+export default MyForm;
