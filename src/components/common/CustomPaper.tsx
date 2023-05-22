@@ -11,11 +11,11 @@ const CustomPaper: React.FC<ICustomPaper & GridProps> = ({
 }) => {
   return (
     <Grid
-      container
       {...props}
+      container
       sx={{
         borderRadius: "1.6rem",
-        transition: "box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+        boxShadow: "rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;",
         backgroundColor: "white",
       }}
     >

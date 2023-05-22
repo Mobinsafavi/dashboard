@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ButtonProps } from "@mui/material";
+import { Button, ButtonProps, styled } from "@mui/material";
 import { BGColor, Children } from "../../config/types";
 import { ButtonTypeMap } from "@mui/material/Button/Button";
 
@@ -7,6 +7,14 @@ interface ICustomButtonProps {
   bgColor?: BGColor;
   children: Children;
 }
+
+const StyledButton = styled(Button)(({ size }) => ({
+  height: size === "medium" || !size ? 40 : undefined,
+  fontSize: "1.2rem",
+  color: "text.info",
+  padding: 2,
+  borderRadius: "0.8rem",
+}));
 
 const CustomButton: React.FC<ICustomButtonProps & ButtonProps> = ({
   bgColor = "primary",
@@ -32,9 +40,9 @@ const CustomButton: React.FC<ICustomButtonProps & ButtonProps> = ({
   }
 
   return (
-    <Button {...props} color="info" className={backgroundColor}>
+    <StyledButton {...props} className={backgroundColor}>
       {children}
-    </Button>
+    </StyledButton>
   );
 };
 export default CustomButton;
