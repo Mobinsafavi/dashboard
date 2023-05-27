@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { Children } from "../../../config/types";
 
 interface IInputLabelProps {
-  label: string;
+  label: Children;
   required?: boolean;
 }
 

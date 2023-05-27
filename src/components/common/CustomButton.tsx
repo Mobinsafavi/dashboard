@@ -8,10 +8,10 @@ interface ICustomButtonProps {
   children: Children;
 }
 
-const StyledButton = styled(Button)(({ size }) => ({
+const StyledButton = styled(Button)(({ size, theme }) => ({
   height: size === "medium" || !size ? 40 : undefined,
   fontSize: "1.2rem",
-  color: "text.info",
+  color: "white",
   padding: 2,
   borderRadius: "0.8rem",
 }));
