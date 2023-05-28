@@ -1,17 +1,23 @@
 import { FormProvider, useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { ContactUsSchema } from "../helpers/validations/schemas/ContactUsSchema";
-import TextInput from "../components/common/inputs/TextInput";
+import FormTextInput from "../components/common/inputs/TextInput/FormTextInput";
 import CustomPaper from "../components/common/CustomPaper";
-import { Button, Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import CustomButton from "../components/common/CustomButton";
 
-const MyForm = () => {
-  const methods = useForm<FormData>({
+interface IContactUsFormData {
+  name: string;
+  email: string;
+  subject: string;
+  feedback: string;
+}
+
+const ContactUs = () => {
+  const methods = useForm<IContactUsFormData>({
     mode: "all",
-    resolver: yupResolver(ContactUsSchema),
+    defaultValues: { name: "", email: "", subject: "", feedback: "" },
+    // resolver: yupResolver(ContactUsSchema),
   });
-  const onSubmit = (data: FormData) => console.log(data);
+  const onSubmit = (data: IContactUsFormData) => console.log(data);
 
   const gridSizes = { xs: 12, md: 6 };
 
@@ -19,17 +25,51 @@ const MyForm = () => {
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
         <Grid container sx={{ justifyContent: "center" }}>
-          <Grid item xs={8}>
-            <CustomPaper my={8} p={3} spacing={3}>
-              <Grid item {...gridSizes}>
-                <TextInput name="name" label="Name" />
+          <Grid item xs={7}>
+            <CustomPaper my={8} spacing={3} pr={4}>
+              <Grid item xs={12}>
+                <Typography
+                  variant="h5"
+                  color="primary"
+                  className="font-weight-bold"
+                >
+                  Contact Us Form
+                </Typography>
+                <Typography variant="h6" color="secondary">
+                  Relational information
+                </Typography>
               </Grid>
               <Grid item {...gridSizes}>
-                <TextInput name="trips" label="Trips" />
+                <FormTextInput
+                  placeholder="eg. Micheal"
+                  name="name"
+                  label="Full name"
+                />
               </Grid>
-              <CustomButton bgColor="secondary" type="submit">
-                Submit
-              </CustomButton>
+              <Grid item {...gridSizes}>
+                <FormTextInput
+                  placeholder="eg. project@dashboard.com"
+                  name="email"
+                  label="Email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <FormTextInput name="subject" label="Subject" />
+              </Grid>
+              <Grid item xs={12}>
+                <FormTextInput
+                  placeholder="eg. Your message"
+                  multiline
+                  rows={4}
+                  name="feedback"
+                  label="Feedback"
+                />
+              </Grid>
+              <Grid item>
+                <CustomButton bgColor="secondary" type="submit">
+                  Submit
+                </CustomButton>
+              </Grid>
             </CustomPaper>
           </Grid>
         </Grid>
@@ -38,4 +78,4 @@ const MyForm = () => {
   );
 };
 
-export default MyForm;
+export default ContactUs;

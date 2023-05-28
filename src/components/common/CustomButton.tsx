@@ -8,12 +8,13 @@ interface ICustomButtonProps {
   children: Children;
 }
 
-const StyledButton = styled(Button)(({ size, theme }) => ({
+const StyledButton = styled(Button)(({ size }) => ({
   height: size === "medium" || !size ? 40 : undefined,
   fontSize: "1.2rem",
   color: "white",
-  padding: 2,
+  padding: "2rem !important",
   borderRadius: "0.8rem",
+  fontWeight: 700,
 }));
 
 const CustomButton: React.FC<ICustomButtonProps & ButtonProps> = ({
