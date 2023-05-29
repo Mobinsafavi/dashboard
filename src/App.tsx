@@ -6,17 +6,15 @@ import { ThemeProvider } from "@mui/material";
 import store from "./store";
 import dashboardTheme from "./constants/theme";
 import { useAppDispatch, useAppSelector } from "./hooks/storeHook";
+import { IntlProvider } from "react-intl";
 function App() {
-
   const { message, locale } = useAppSelector((state) => state.language);
   const dispatch = useAppDispatch();
 
   return (
-    <ThemeProvider theme={dashboardTheme}>
-      <Provider store={store}>
-        <MainLayout />
-      </Provider>
-    </ThemeProvider>
+    <IntlProvider locale={locale} messages={message}>
+      <MainLayout />
+    </IntlProvider>
   );
 }
 

@@ -1,4 +1,11 @@
-import { styled, TextField, TextFieldProps } from "@mui/material";
+import {
+  InputAdornment,
+  styled,
+  TextField,
+  TextFieldProps,
+} from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 const CustomInputBase = styled(TextField)(({ multiline, size }) => ({
   "& .MuiInputBase-root": {
@@ -19,7 +26,20 @@ const CustomInputBase = styled(TextField)(({ multiline, size }) => ({
 }));
 
 const InputBase = (props: TextFieldProps) => {
-  return <CustomInputBase {...props} />;
+  return (
+    <CustomInputBase
+      InputProps={
+        props.error
+          ? {
+              endAdornment: (
+                <FontAwesomeIcon icon={faCircleExclamation} color="#EA0606" />
+              ),
+            }
+          : undefined
+      }
+      {...props}
+    />
+  );
 };
 
 export default InputBase;

@@ -1,3 +1,30 @@
 {
-  "key" : "value"
+  "validation.required": "This field is required",
+  "validation.invalid-trim": "Invalid",
+  "validation.min-6-password": "Password length must be at least 6 characters long",
+  "validation.max-64-password": "Password length must be less than 16 characters long",
+  "validation.min-4-phone": "Phone length must be at least 4 characters long",
+  "validation.min-5-char": "Text should contain at least 5 characters.",
+  "validation.max-24-phone": "Phone length must be less than 24 characters long",
+  "validation.max-32-phone": "Phone length must be less than 32 characters long",
+  "validation.max-16": "This field must be less than 16 characters long",
+  "validation.max-32": "This field must be less than 32 characters long",
+  "validation.max-64": "This field must be less than 64 characters long",
+  "validation.max-128": "This field must be less than 128 characters long",
+  "validation.email": "Email is not valid",
+  "validation.url": "Website Url is not valid",
+  "validation.invalid-captcha": "Invalid captcha",
+  "reset-password.match": "New password and confirm password must be the same",
+
+
+  "contact-us-form.form.title" : "Contact Us Form",
+  "contact-us-form.form.description" : "Relational information",
+  "contact-us-form.form.name-field.label" : "Full name",
+  "contact-us-form.form.name-field.placeholder" : "eg. Micheal",
+  "contact-us-form.form.email-field.label" : "Email",
+  "contact-us-form.form.email-field.placeholder" : "eg. project@dashboard.com",
+  "contact-us-form.form.subject-field.label" : "Subject",
+  "contact-us-form.form.feedback-field.label" : "Feedback",
+  "contact-us-form.form.feedback-field.placeholder" : "eg. Your message",
+  "contact-us-form.form.submit-btn" : "submit"
 }

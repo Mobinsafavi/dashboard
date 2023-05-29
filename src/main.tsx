@@ -6,12 +6,16 @@ import { RouterProvider } from "react-router-dom";
 import { ErrorPage } from "./pages/CustomError";
 import router from "./routes";
 import { Provider } from "react-redux";
+import store from "./store";
+import { ThemeProvider } from "@mui/material";
+import dashboardTheme from "./constants/theme";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
-    ,
-  </Provider>
+  <ThemeProvider theme={dashboardTheme}>
+    <Provider store={store}>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
+    </Provider>
+  </ThemeProvider>
 );
