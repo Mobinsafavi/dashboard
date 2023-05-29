@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import English from "../../lang/en.json";
+import Farsi from "../../lang/fas.json";
 
 const initialState = {
-  locale: "en",
+  locale: "fas",
   message: English,
   direction: "rtl",
 };

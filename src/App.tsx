@@ -10,19 +10,16 @@ import { useAppSelector, useAppDispatch } from "./hooks/storeHook";
 function App() {
   // const [count, setCount] = useState(0);
 
-  const message = useAppSelector((state) => state.language.message);
-  console.log(message);
+  const { message, locale } = useAppSelector((state) => state.language);
   const dispatch = useAppDispatch();
 
   return (
-    <Provider store={store}>
-      <IntlProvider locale="en" messages={message}>
-        <p>
-          <FormattedMessage id="key" />
-        </p>
-        <MainLayout />
-      </IntlProvider>
-    </Provider>
+    <IntlProvider locale={locale} messages={message}>
+      <p>
+        <FormattedMessage id="key" />
+      </p>
+      <MainLayout />
+    </IntlProvider>
   );
 }
 
