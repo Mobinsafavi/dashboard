@@ -5,8 +5,11 @@ import { ThemeProvider } from "@mui/material";
 
 import store from "./store";
 import dashboardTheme from "./constants/theme";
+import { useAppDispatch, useAppSelector } from "./hooks/storeHook";
 function App() {
-  const [count, setCount] = useState(0);
+
+  const { message, locale } = useAppSelector((state) => state.language);
+  const dispatch = useAppDispatch();
 
   return (
     <ThemeProvider theme={dashboardTheme}>

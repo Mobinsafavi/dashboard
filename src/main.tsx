@@ -5,9 +5,13 @@ import "./assets/css/sass/main.sass";
 import { RouterProvider } from "react-router-dom";
 import { ErrorPage } from "./pages/CustomError";
 import router from "./routes";
+import { Provider } from "react-redux";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <Provider store={store}>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+    ,
+  </Provider>
 );
