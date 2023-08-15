@@ -3,8 +3,9 @@ import App from "../App";
 import { ErrorPage } from "../pages/CustomError";
 import React from "react";
 import ContactUs from "../pages/ContactUs";
+import {userRoutes} from "./userRoutes";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -16,6 +17,5 @@ const router = createBrowserRouter([
       },
     ],
   },
+    ...userRoutes,
 ]);
-
-export default router;

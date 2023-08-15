@@ -1,7 +1,7 @@
 import { Grid, Theme } from "@mui/material";
 
 import MainContainer from "./mainContainer";
-import { useAppSelector } from "../hooks/storeHook";
+import { useAppSelector } from "../../hooks/storeHook";
 import { makeStyles } from "@mui/styles";
 import Sidebar from "./sidebar";
 

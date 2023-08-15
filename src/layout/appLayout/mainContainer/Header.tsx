@@ -7,9 +7,9 @@ import {
   faGear,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import CustomBreadCrumb from "../../components/common/CustomBreadCrumb";
-import { sidebarToggleHandler } from "../../store/sidebar/sidebarSlice";
-import { useAppDispatch } from "../../hooks/storeHook";
+import CustomBreadCrumb from "../../../components/common/CustomBreadCrumb";
+import { sidebarToggleHandler } from "../../../store/sidebar/sidebarSlice";
+import { useAppDispatch } from "../../../hooks/storeHook";
 
 const Header = () => {
   const dispatch = useAppDispatch();

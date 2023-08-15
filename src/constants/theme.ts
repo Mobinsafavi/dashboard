@@ -19,6 +19,9 @@ const dashboardTheme = createTheme({
     },
   },
   typography: {
+    h1: {
+      fontSize: "4.8rem",
+    },
     h5: {
       fontSize: "2rem",
     },

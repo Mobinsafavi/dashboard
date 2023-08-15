@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MainLayout from "./layout";
+import MainLayout from "./layout/appLayout";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "@mui/material";
 
