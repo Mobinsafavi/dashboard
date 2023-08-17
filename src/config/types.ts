@@ -12,3 +12,10 @@ export type BGColor = "primary" | "secondary" | "success" | "error" | "warning";
 export interface IFormProps
   extends Partial<UseControllerReturn<FieldValues>>,
     Partial<UseFormReturn<FieldValues>> {}
+
+export type PaletteColor =
+  | "primary"
+  | "secondary"
+  | "success"
+  | "error"
+  | "warning";
