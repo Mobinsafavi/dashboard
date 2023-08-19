@@ -8,6 +8,7 @@ import LoginSchema from "../../helpers/validations/schemas/LoginSchema";
 import style from "./Login.module.scss";
 import CustomButton from "../../components/common/CustomButton";
 import CustomSwitch from "../../components/common/inputs/CustomSwitch";
+import AuthDivider from "./components/AuthDivider";
 
 interface ILoginFormData {
   email: string;
@@ -61,7 +62,19 @@ const Login = () => {
                 xs={12}
                 className={style["auth-box-container__form__submit-button"]}
               >
-                <CustomButton fullWidth>SIGN IN</CustomButton>
+                <CustomButton type="submit" fullWidth>
+                  SIGN IN
+                </CustomButton>
+              </Grid>
+              <AuthDivider />
+              <Grid
+                item
+                xs={12}
+                className={style["auth-box-container__form__signup-button"]}
+              >
+                <CustomButton bgColor="secondary" fullWidth>
+                  SIGN UP
+                </CustomButton>
               </Grid>
             </form>
           </FormProvider>

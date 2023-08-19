@@ -5,16 +5,20 @@
   }
   &__form {
     &__input {
-      $self : &;
+      $self: &;
       margin: 16px 0 !important;
 
-      #{ $self }--switch &{
+      #{ $self }--switch & {
         margin-top: 15px !important;
       }
     }
 
     &__submit-button {
       margin: 40px 0 20px 0 !important;
+    }
+
+    &__signup-button {
+      margin: 20px 0 !important;
     }
   }
 }

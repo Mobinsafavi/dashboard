@@ -1,6 +1,6 @@
 import { Stack, styled, Switch, SwitchProps, Typography } from "@mui/material";
 import React from "react";
-import { PaletteColor } from "../../../../config/types";
+import { Children, IFormProps, PaletteColor } from "../../../../config/types";
 
 const SwitchComponent = styled(Switch)(({ theme }) => ({
   width: 40,
@@ -26,7 +26,7 @@ const SwitchComponent = styled(Switch)(({ theme }) => ({
       },
     },
     "&.Mui-focusVisible .MuiSwitch-thumb": {
-      color: "#33cf4d",
+      color: "#32d14d",
       border: "6px solid #fff",
     },
     "&.Mui-disabled .MuiSwitch-thumb": {
@@ -54,23 +54,28 @@ const SwitchComponent = styled(Switch)(({ theme }) => ({
   },
 }));
 
-interface ICustomSwitchComponent {
+export type CustomSwitchComponentTypes = SwitchProps & {
   labelColor?: PaletteColor;
   enableText: string;
   disableText?: string;
-}
-const CustomSwitch: React.FC<ICustomSwitchComponent> = ({
+  formInputProps?: IFormProps;
+};
+
+const CustomSwitch: React.FC<CustomSwitchComponentTypes> = ({
   enableText,
   disableText,
   labelColor = "primary",
+  formInputProps,
+  ...props
 }) => {
+  const { field, fieldState } = formInputProps || {};
+
   return (
     <Stack direction="row" spacing={1} alignItems="center">
-      {disableText ? <Typography color={labelColor}>Off</Typography> : null}
-      <SwitchComponent
-        defaultChecked
-        inputProps={{ "aria-label": "ant design" }}
-      />
+      {disableText ? (
+        <Typography color={labelColor}>{disableText}</Typography>
+      ) : null}
+      <SwitchComponent {...field} {...props} />
       <Typography color={labelColor}>{enableText}</Typography>
     </Stack>
   );

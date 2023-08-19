@@ -9,7 +9,7 @@ const User = () => {
   const { message, locale } = useAppSelector((state) => state.language);
   return (
     <IntlProvider locale={locale} messages={message}>
-      <Grid container>
+      <Grid container sx={{ position: "relative" }}>
         <Grid item xs={12} className={style["header-container"]}>
           <img
             src={headerImage}
@@ -31,10 +31,18 @@ const User = () => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid container xs={3}>
-              <Outlet />
-            </Grid>
           </Grid>
+        </Grid>
+        <Grid
+          container
+          xs={3}
+          sx={{
+            marginTop: "-200px",
+            zIndex: "5",
+            mx: "auto",
+          }}
+        >
+          <Outlet />
         </Grid>
       </Grid>
     </IntlProvider>
