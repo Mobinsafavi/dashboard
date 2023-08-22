@@ -1,6 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Link } from "react-router-dom";
 
 import CustomPaper from "../../components/common/CustomPaper";
 import FormTextInput from "../../components/common/inputs/TextInput/FormTextInput";
@@ -72,9 +73,11 @@ const Login = () => {
                 xs={12}
                 className={style["auth-box-container__form__signup-button"]}
               >
-                <CustomButton bgColor="secondary" fullWidth>
-                  SIGN UP
-                </CustomButton>
+                <Link to="/user/signup">
+                  <CustomButton bgColor="secondary" fullWidth>
+                    SIGN UP
+                  </CustomButton>
+                </Link>
               </Grid>
             </form>
           </FormProvider>

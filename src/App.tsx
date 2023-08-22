@@ -1,19 +1,20 @@
-import { useState } from "react";
-import MainLayout from "./layout/appLayout";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "@mui/material";
+import { RouterProvider } from "react-router-dom";
+import { IntlProvider } from "react-intl";
 
 import store from "./store";
 import dashboardTheme from "./constants/theme";
 import { useAppDispatch, useAppSelector } from "./hooks/storeHook";
-import { IntlProvider } from "react-intl";
+import { router } from "./routes";
+
 function App() {
   const { message, locale } = useAppSelector((state) => state.language);
   const dispatch = useAppDispatch();
 
   return (
     <IntlProvider locale={locale} messages={message}>
-      <MainLayout />
+      <RouterProvider router={router} />
     </IntlProvider>
   );
 }

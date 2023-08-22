@@ -8,13 +8,13 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { ThemeProvider } from "@mui/material";
 import dashboardTheme from "./constants/theme";
-import {router} from "./routes";
+import { router } from "./routes";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <ThemeProvider theme={dashboardTheme}>
     <Provider store={store}>
       <React.StrictMode>
-        <RouterProvider router={router} />
+        <App />
       </React.StrictMode>
     </Provider>
   </ThemeProvider>
