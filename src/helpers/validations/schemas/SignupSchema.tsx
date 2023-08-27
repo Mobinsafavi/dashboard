@@ -2,7 +2,10 @@
 import * as Yup from "yup";
 import { FormattedMessage } from "react-intl";
 
-const LoginSchema = Yup.object().shape({
+const SignupSchema = Yup.object().shape({
+  name: Yup.string()
+    .required(<FormattedMessage id="validation.required" />)
+    .trim(),
   email: Yup.string()
     .required(<FormattedMessage id="validation.required" />)
     .email(<FormattedMessage id="validation.email" />)
@@ -13,4 +16,4 @@ const LoginSchema = Yup.object().shape({
     .trim(),
 });
 
-export default LoginSchema;
+export default SignupSchema;
