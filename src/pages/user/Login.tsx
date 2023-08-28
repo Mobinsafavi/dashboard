@@ -10,6 +10,7 @@ import style from "./Login.module.scss";
 import CustomButton from "../../components/common/CustomButton";
 import CustomSwitch from "../../components/common/inputs/CustomSwitch";
 import AuthDivider from "./components/AuthDivider";
+import OtherPlatformAuthentication from "./components/OtherPlatformAuthentication";
 
 interface ILoginFormData {
   email: string;
@@ -34,6 +35,7 @@ const Login = () => {
             Sign in
           </Typography>
         </Grid>
+        <OtherPlatformAuthentication />
         <Grid item xs={12} className={style["auth-box-container__form"]}>
           <FormProvider {...methods}>
             <form onSubmit={methods.handleSubmit(submitHandler)}>

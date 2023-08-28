@@ -68,7 +68,7 @@ const CustomSwitch: React.FC<CustomSwitchComponentTypes> = ({
   formInputProps,
   ...props
 }) => {
-  const { field, fieldState } = formInputProps || {};
+  const { field } = formInputProps || {};
 
   return (
     <Stack direction="row" spacing={1} alignItems="center">

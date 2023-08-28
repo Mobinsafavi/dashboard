@@ -70,7 +70,7 @@ const OtherPlatformAuthentication = () => {
   return (
     <Grid container className={style["platform-container"]}>
       {platformItem.map((item) => (
-        <Grid item className={style["platform-container__item"]} xs={3}>
+        <Grid item className={style["platform-container__item"]} xs={2}>
           {item.svg}
         </Grid>
       ))}
