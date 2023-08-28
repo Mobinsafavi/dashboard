@@ -18,7 +18,7 @@ const AuthDivider = () => {
           color="secondary"
           className="font-weight-bold"
         >
-          Or
+          or
         </Typography>
       </Grid>
       <Grid item xs={5}>

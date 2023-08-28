@@ -67,20 +67,20 @@ const Login = () => {
                   SIGN IN
                 </CustomButton>
               </Grid>
-              <AuthDivider />
-              <Grid
-                item
-                xs={12}
-                className={style["auth-box-container__form__signup-button"]}
-              >
-                <Link to="/user/signup">
-                  <CustomButton bgColor="secondary" fullWidth>
-                    SIGN UP
-                  </CustomButton>
-                </Link>
-              </Grid>
             </form>
           </FormProvider>
+        </Grid>
+        <AuthDivider />
+        <Grid
+          item
+          xs={12}
+          className={style["auth-box-container__form__signup-button"]}
+        >
+          <Link to="/user/signup">
+            <CustomButton bgColor="secondary" fullWidth>
+              SIGN UP
+            </CustomButton>
+          </Link>
         </Grid>
       </Grid>
     </CustomPaper>

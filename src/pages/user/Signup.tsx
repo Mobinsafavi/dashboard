@@ -10,6 +10,7 @@ import CustomButton from "../../components/common/CustomButton";
 import CustomSwitch from "../../components/common/inputs/CustomSwitch";
 import AuthDivider from "./components/AuthDivider";
 import SignupSchema from "../../helpers/validations/schemas/SignupSchema";
+import OtherPlatformAuthentication from "./components/OtherPlatformAuthentication";
 
 interface ISignupFormData {
   name: string;
@@ -40,6 +41,8 @@ const Signup = () => {
             Register with
           </Typography>
         </Grid>
+        <OtherPlatformAuthentication />
+        <AuthDivider />
         <Grid item xs={12} className={style["auth-box-container__form"]}>
           <FormProvider {...methods}>
             <form onSubmit={methods.handleSubmit(submitHandler)}>
@@ -76,21 +79,9 @@ const Signup = () => {
                 xs={12}
                 className={style["auth-box-container__form__submit-button"]}
               >
-                <CustomButton type="submit" fullWidth>
-                  SIGN IN
+                <CustomButton type="submit" bgColor="secondary" fullWidth>
+                  SIGN up
                 </CustomButton>
-              </Grid>
-              <AuthDivider />
-              <Grid
-                item
-                xs={12}
-                className={style["auth-box-container__form__signup-button"]}
-              >
-                <Link to="/user/signup">
-                  <CustomButton bgColor="secondary" fullWidth>
-                    SIGN UP
-                  </CustomButton>
-                </Link>
               </Grid>
             </form>
           </FormProvider>
