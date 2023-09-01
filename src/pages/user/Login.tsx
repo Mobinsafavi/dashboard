@@ -51,14 +51,18 @@ const Login = () => {
                 xs={12}
                 className={style["auth-box-container__form__input"]}
               >
-                <FormTextInput name="password" placeholder="Password" />
+                <FormTextInput
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                />
               </Grid>
               <Grid
                 item
                 xs={12}
                 className={style["auth-box-container__form__input"]}
               >
-                <CustomSwitch enableText="Remember me" />
+                <CustomSwitch label="Remember me" sx={{ marginLeft: "10px" }} />
               </Grid>
               <Grid
                 item

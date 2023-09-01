@@ -1,16 +1,15 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Link } from "react-router-dom";
 
 import CustomPaper from "../../components/common/CustomPaper";
 import FormTextInput from "../../components/common/inputs/TextInput/FormTextInput";
 import style from "./Login.module.scss";
 import CustomButton from "../../components/common/CustomButton";
-import CustomSwitch from "../../components/common/inputs/CustomSwitch";
 import AuthDivider from "./components/AuthDivider";
 import SignupSchema from "../../helpers/validations/schemas/SignupSchema";
 import OtherPlatformAuthentication from "./components/OtherPlatformAuthentication";
+import CustomCheckBox from "../../components/common/inputs/CustomCheckBox";
 
 interface ISignupFormData {
   name: string;
@@ -72,7 +71,16 @@ const Signup = () => {
                 xs={12}
                 className={style["auth-box-container__form__input"]}
               >
-                <CustomSwitch enableText="Remember me" />
+                <CustomCheckBox
+                  label={
+                    <Stack direction="row" spacing={1}>
+                      <Typography>I agree the</Typography>
+                      <Typography className="font-weight-bold">
+                        Terms and Conditions
+                      </Typography>
+                    </Stack>
+                  }
+                />
               </Grid>
               <Grid
                 item

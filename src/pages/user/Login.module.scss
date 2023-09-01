@@ -10,8 +10,9 @@
       $self: &;
       margin: 16px 0 !important;
 
-      #{ $self }--switch & {
-        margin-top: 15px !important;
+      #{ $self }--switch {
+        margin-top: 85px !important;
+        margin-left: 10px;
       }
     }
 

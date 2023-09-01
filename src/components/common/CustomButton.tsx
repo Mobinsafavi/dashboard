@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, ButtonProps, styled } from "@mui/material";
 import { BGColor, Children } from "../../config/types";
-import { ButtonTypeMap } from "@mui/material/Button/Button";
 
 interface ICustomButtonProps {
   bgColor?: BGColor;

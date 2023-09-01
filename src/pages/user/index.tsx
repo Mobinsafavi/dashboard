@@ -33,7 +33,8 @@ const User = () => {
       </Grid>
       <Grid
         container
-        xs={3}
+        xs={11}
+        md={3}
         sx={{
           marginTop: "-200px",
           zIndex: "5",

@@ -1,6 +1,13 @@
-import { Stack, styled, Switch, SwitchProps, Typography } from "@mui/material";
+import {
+  FormControlLabel,
+  styled,
+  Switch,
+  SwitchProps,
+  Typography,
+} from "@mui/material";
 import React from "react";
-import { Children, IFormProps, PaletteColor } from "../../../../config/types";
+
+import { IFormProps, PaletteColor } from "../../../../config/types";
 
 const SwitchComponent = styled(Switch)(({ theme }) => ({
   width: 40,
@@ -56,28 +63,27 @@ const SwitchComponent = styled(Switch)(({ theme }) => ({
 
 export type CustomSwitchComponentTypes = SwitchProps & {
   labelColor?: PaletteColor;
-  enableText: string;
+  label: string;
   disableText?: string;
   formInputProps?: IFormProps;
 };
 
 const CustomSwitch: React.FC<CustomSwitchComponentTypes> = ({
-  enableText,
-  disableText,
-  labelColor = "primary",
+  label,
   formInputProps,
   ...props
 }) => {
   const { field } = formInputProps || {};
 
   return (
-    <Stack direction="row" spacing={1} alignItems="center">
-      {disableText ? (
-        <Typography color={labelColor}>{disableText}</Typography>
-      ) : null}
-      <SwitchComponent {...field} {...props} />
-      <Typography color={labelColor}>{enableText}</Typography>
-    </Stack>
+    <FormControlLabel
+      control={<SwitchComponent {...field} {...props} />}
+      label={
+        <Typography sx={{ color: "primary.main", marginLeft: 1 }}>
+          {label}
+        </Typography>
+      }
+    />
   );
 };
 
