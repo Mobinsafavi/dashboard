@@ -61,19 +61,17 @@ const SwitchComponent = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export type CustomSwitchComponentTypes = SwitchProps & {
-  labelColor?: PaletteColor;
+export type CustomSwitchProps = SwitchProps & {
   label: string;
-  disableText?: string;
-  formInputProps?: IFormProps;
+  formSwitchProps?: IFormProps;
 };
 
-const CustomSwitch: React.FC<CustomSwitchComponentTypes> = ({
+const CustomSwitch: React.FC<CustomSwitchProps> = ({
   label,
-  formInputProps,
+  formSwitchProps,
   ...props
 }) => {
-  const { field } = formInputProps || {};
+  const { field } = formSwitchProps || {};
 
   return (
     <FormControlLabel

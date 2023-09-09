@@ -9,7 +9,7 @@ import CustomButton from "../../components/common/CustomButton";
 import AuthDivider from "./components/AuthDivider";
 import SignupSchema from "../../helpers/validations/schemas/SignupSchema";
 import OtherPlatformAuthentication from "./components/OtherPlatformAuthentication";
-import CustomCheckBox from "../../components/common/inputs/CustomCheckBox";
+import FormCustomCheckBox from "../../components/common/inputs/CustomCheckBox/FormCustomCheckBox";
 
 interface ISignupFormData {
   name: string;
@@ -64,14 +64,19 @@ const Signup = () => {
                 xs={12}
                 className={style["auth-box-container__form__input"]}
               >
-                <FormTextInput name="password" placeholder="Password" />
+                <FormTextInput
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                />
               </Grid>
               <Grid
                 item
                 xs={12}
                 className={style["auth-box-container__form__input"]}
               >
-                <CustomCheckBox
+                <FormCustomCheckBox
+                  name="isAgreedTermsAndConditions"
                   label={
                     <Stack direction="row" spacing={1}>
                       <Typography>I agree the</Typography>
@@ -80,6 +85,7 @@ const Signup = () => {
                       </Typography>
                     </Stack>
                   }
+                  sx={{ marginLeft: "10px !important" }}
                 />
               </Grid>
               <Grid

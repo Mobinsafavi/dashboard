@@ -1,9 +1,9 @@
 import { Controller, useFormContext } from "react-hook-form";
 import React from "react";
-import CustomCheckBox, { ICustomCheckBox } from "./index";
+import CustomSwitch, { CustomSwitchProps } from "./index";
 
-type FormCustomCheckBoxProps = ICustomCheckBox & { name: string };
-const FormCustomCheckBox: React.FC<FormCustomCheckBoxProps> = ({
+type FormCustomSwitchProps = CustomSwitchProps & { name: string };
+const FormCustomSwitch: React.FC<FormCustomSwitchProps> = ({
   name,
   label,
   ...props
@@ -16,9 +16,9 @@ const FormCustomCheckBox: React.FC<FormCustomCheckBoxProps> = ({
       name={name}
       render={({ field, fieldState }) => {
         return (
-          <CustomCheckBox
+          <CustomSwitch
             label={label}
-            formCheckBoxProps={{ field, fieldState }}
+            formSwitchProps={{ field, fieldState }}
             {...props}
           />
         );
@@ -27,4 +27,4 @@ const FormCustomCheckBox: React.FC<FormCustomCheckBoxProps> = ({
   );
 };
 
-export default FormCustomCheckBox;
+export default FormCustomSwitch;

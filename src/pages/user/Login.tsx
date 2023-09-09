@@ -8,9 +8,9 @@ import FormTextInput from "../../components/common/inputs/TextInput/FormTextInpu
 import LoginSchema from "../../helpers/validations/schemas/LoginSchema";
 import style from "./Login.module.scss";
 import CustomButton from "../../components/common/CustomButton";
-import CustomSwitch from "../../components/common/inputs/CustomSwitch";
 import AuthDivider from "./components/AuthDivider";
 import OtherPlatformAuthentication from "./components/OtherPlatformAuthentication";
+import FormCustomSwitch from "../../components/common/inputs/CustomSwitch/FormCustomSwitch";
 
 interface ILoginFormData {
   email: string;
@@ -62,7 +62,11 @@ const Login = () => {
                 xs={12}
                 className={style["auth-box-container__form__input"]}
               >
-                <CustomSwitch label="Remember me" sx={{ marginLeft: "10px" }} />
+                <FormCustomSwitch
+                  name="isRemember"
+                  label="Remember me"
+                  sx={{ marginLeft: "10px" }}
+                />
               </Grid>
               <Grid
                 item
