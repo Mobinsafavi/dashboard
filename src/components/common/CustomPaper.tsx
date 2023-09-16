@@ -12,7 +12,6 @@ const CustomPaper: React.FC<ICustomPaper & GridProps> = ({
   return (
     <Grid
       container
-      p={2}
       sx={{
         borderRadius: "1.6rem",
         boxShadow: "rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;",

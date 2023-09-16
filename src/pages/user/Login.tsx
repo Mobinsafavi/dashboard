@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import CustomPaper from "../../components/common/CustomPaper";
 import FormTextInput from "../../components/common/inputs/TextInput/FormTextInput";
 import LoginSchema from "../../helpers/validations/schemas/LoginSchema";
-import style from "./Login.module.scss";
 import CustomButton from "../../components/common/CustomButton";
 import AuthDivider from "./components/AuthDivider";
 import OtherPlatformAuthentication from "./components/OtherPlatformAuthentication";
@@ -29,50 +28,36 @@ const Login = () => {
 
   return (
     <CustomPaper>
-      <Grid container className={style["auth-box-container"]}>
-        <Grid item container className={style["auth-box-container__title"]}>
+      <Grid container padding={3}>
+        <Grid item container justifyContent="center" px={3} pb={3}>
           <Typography variant="h5" color="primary" className="font-weight-bold">
             Sign in
           </Typography>
         </Grid>
         <OtherPlatformAuthentication />
-        <Grid item xs={12} className={style["auth-box-container__form"]}>
+        <Grid item xs={12}>
           <FormProvider {...methods}>
             <form onSubmit={methods.handleSubmit(submitHandler)}>
-              <Grid
-                item
-                xs={12}
-                className={style["auth-box-container__form__input"]}
-              >
-                <FormTextInput name="email" placeholder="Email" />
+              <Grid container spacing={2} mt={1}>
+                <Grid item xs={12}>
+                  <FormTextInput name="email" placeholder="Email" />
+                </Grid>
+                <Grid item xs={12}>
+                  <FormTextInput
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                  />
+                </Grid>
+                <Grid item xs={12} mb={2}>
+                  <FormCustomSwitch
+                    name="isRemember"
+                    label="Remember me"
+                    sx={{ marginLeft: "10px" }}
+                  />
+                </Grid>
               </Grid>
-              <Grid
-                item
-                xs={12}
-                className={style["auth-box-container__form__input"]}
-              >
-                <FormTextInput
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                className={style["auth-box-container__form__input"]}
-              >
-                <FormCustomSwitch
-                  name="isRemember"
-                  label="Remember me"
-                  sx={{ marginLeft: "10px" }}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                className={style["auth-box-container__form__submit-button"]}
-              >
+              <Grid item xs={12} my={3}>
                 <CustomButton type="submit" fullWidth>
                   SIGN IN
                 </CustomButton>
@@ -81,11 +66,7 @@ const Login = () => {
           </FormProvider>
         </Grid>
         <AuthDivider />
-        <Grid
-          item
-          xs={12}
-          className={style["auth-box-container__form__signup-button"]}
-        >
+        <Grid item xs={12} my={3}>
           <Link to="/user/signup">
             <CustomButton bgColor="secondary" fullWidth>
               SIGN UP

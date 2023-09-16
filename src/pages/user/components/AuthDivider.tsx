@@ -2,13 +2,7 @@ import { Divider, Grid, Typography } from "@mui/material";
 
 const AuthDivider = () => {
   return (
-    <Grid
-      container
-      sx={{
-        justifyContent: "space-around",
-        alignItems: "center",
-      }}
-    >
+    <Grid container justifyContent="space-around" alignItems="center">
       <Grid item xs={5}>
         <Divider />
       </Grid>
