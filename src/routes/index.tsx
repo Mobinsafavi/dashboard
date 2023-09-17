@@ -9,7 +9,6 @@ import Login from "../pages/user/Login";
 import Signup from "../pages/user/Signup";
 import MainLayout from "../layout/appLayout";
 import ContactUs from "../pages/ContactUs";
-import { ErrorPage } from "../pages/CustomError";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
