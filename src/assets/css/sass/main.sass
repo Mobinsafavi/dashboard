@@ -1,13 +1,66 @@
-@import './_mixin.sass'
 @import 'variables'
 
 html
   font-size: 10px
   overflow-x: hidden
+  margin: 0
+  padding: 0
+
+
+*
+  box-sizing: border-box
+  font-family : $main-font !important
 
 body
   background-color: $theme-color-alice-blue
   overflow-x: hidden
+  margin: 0
+
+::-webkit-scrollbar
+  width: 6px
+  height: 6px
+  transition: all 0.4s
+::-webkit-scrollbar-thumb
+  background: #999
+  border-radius: 5px
+  &:hover
+    background: #666
+
+@font-face
+  font-family: Roboto
+  src: url(../../fonts/Roboto-Light.ttf) format('ttf')
+  font-weight: 300
+  font-style: normal
+
+@font-face
+  font-family: Roboto
+  src: url(../../fonts/Roboto-Regular.ttf) format('ttf')
+  font-weight: 500
+  font-style: normal
+
+@font-face
+  font-family: Roboto
+  src: url(../../fonts/Roboto-Bold.ttf) format('ttf')
+  font-weight: 700
+  font-style: normal
+
+@font-face
+  font-family: Opensans
+  src: url(../../fonts/OpenSans-Light.woff) format('woff')
+  font-weight: 300
+  font-style: normal
+
+@font-face
+  font-family: Opensans
+  src: url(../../fonts/OpenSans-Regular.woff) format('woff')
+  font-weight: 500
+  font-style: normal
+
+@font-face
+  font-family: Opensans
+  src: url(../../fonts/OpenSans-Bold.woff) format('woff')
+  font-weight: 700
+  font-style: normal
 
 
 .primary-gradiant
@@ -30,4 +83,5 @@ body
 .font-weight-bold
   font-weight: 700 !important
 
-
+.text-decoration-none
+  text-decoration: none

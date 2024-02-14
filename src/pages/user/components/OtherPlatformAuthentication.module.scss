@@ -5,9 +5,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border : 1px solid rgb(233, 236, 239);
+    border: 1px solid rgb(233, 236, 239);
     aspect-ratio: 4/3;
     border-radius: 8px;
     margin: 0 5px !important;
+
+    &:hover {
+      opacity: 0.75;
+      transform: scale(1.02);
+      cursor : pointer
+    }
   }
 }

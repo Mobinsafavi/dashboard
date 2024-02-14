@@ -1,47 +1,32 @@
-import { Grid, Theme } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import MainContainer from "./mainContainer";
 import { useAppSelector } from "../../hooks/storeHook";
-import { makeStyles } from "@mui/styles";
 import Sidebar from "./sidebar";
 
-const useStyles = makeStyles((theme: Theme) => ({
-  gridItem: {
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-}));
-
 const MainLayout = () => {
-  const classes = useStyles();
   const isSidebarOpen = useAppSelector((state) => state.sidebar.isOpen);
 
   return (
-    <Grid container xs={12} spacing={4}>
+    <Grid container sx={{ overflow: "hidden", mt: 3 }}>
       <Grid
         item
-        className={classes.gridItem}
+        xs={12}
+        lg={isSidebarOpen ? 2 : 1}
         sx={{
-          width: {
-            xs: `${(100 / 12) * 9}% `,
-            sm: `${isSidebarOpen ? `${(100 / 12) * 2}%` : `${100 / 12}%`}`,
-          },
+          display: "flex",
+          justifyContent: "center",
         }}
       >
         <Sidebar />
       </Grid>
       <Grid
         item
-        className={classes.gridItem}
+        xs={12}
+        lg={isSidebarOpen ? 10 : 11}
         sx={{
-          width: {
-            xs: `100% `,
-            sm: `${
-              isSidebarOpen ? `${(100 / 12) * 10}%` : `${(100 / 12) * 11}%`
-            }`,
-          },
+          display: "flex",
+          justifyContent: "center",
         }}
       >
         <MainContainer />

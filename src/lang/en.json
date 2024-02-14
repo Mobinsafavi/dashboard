@@ -19,7 +19,7 @@
 
   "contact-us-form.form.title" : "Contact Us Form",
   "contact-us-form.form.description" : "Relational information",
-  "contact-us-form.formw.name-field.label" : "Full name",
+  "contact-us-form.form.name-field.label" : "Full name",
   "contact-us-form.form.name-field.placeholder" : "eg. Micheal",
   "contact-us-form.form.email-field.label" : "Email",
   "contact-us-form.form.email-field.placeholder" : "eg. project@dashboard.com",

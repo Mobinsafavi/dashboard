@@ -1,15 +1,15 @@
 import { Box } from "@mui/material";
-import Header from "./Header";
-import Footer from "./Footer";
+import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
+import Footer from "../../components/common/Footer";
 
 const MainContainer = () => {
   return (
-    <>
-      <Header />
+    <Box width="95%">
+      <Navbar />
       <Outlet />
       <Footer />
-    </>
+    </Box>
   );
 };
 
