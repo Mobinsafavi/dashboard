@@ -1,3 +1,4 @@
+import React from 'react';
 import { Grid, Stack, Typography } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -11,10 +12,7 @@ import FormCustomCheckBox from "../../components/common/inputs/CustomCheckBox/Fo
 import { Link } from "react-router-dom";
 import { urls } from "../../constants/urls";
 import AuthContentContainerPaper from "./components/AuthContentContainerPaper";
-import ProductController from "../../utils/Entities/Product/product.controller";
 import UserController from "../../utils/Entities/User/user.controller";
-import { useAppDispatch, useAppSelector } from "../../hooks/storeHook";
-import { setUserInformation } from "../../store/user/userSlice";
 
 interface ISignupFormData {
   name: string;
@@ -24,9 +22,6 @@ interface ISignupFormData {
 }
 
 const Signup = () => {
-  const dispatch = useAppDispatch();
-  const { token } = useAppSelector((state) => state.user);
-
   const methods = useForm<ISignupFormData>({
     mode: "all",
     defaultValues: {
@@ -41,7 +36,6 @@ const Signup = () => {
   const submitHandler = async (data: ISignupFormData) => {
     try {
       const userInfo = await UserController.signup(data);
-      dispatch(setUserInformation(userInfo.response));
     } catch (err) {}
   };
 

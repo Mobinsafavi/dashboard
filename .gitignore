@@ -1,9 +1,3 @@
-/node_modules/
-/.idea/.gitignore
-/.idea/dashboard.iml
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/vcs.xml
-/.idea/watcherTasks.xml
-/.idea/codeStyles/codeStyleConfig.xml
-/.idea/codeStyles/Project.xml
+/node_modules
+/.idea
+/.vscode

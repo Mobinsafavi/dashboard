@@ -1,8 +1,9 @@
 import { Stack, Typography } from "@mui/material";
-import saudiArabia from "../../../../../public/images/Saudi-Arabia.png";
-import unitedKingdom from "../../../../../public/images/United-Kingdom.png";
+// import saudiArabia from "../../../../../public/images/Saudi-Arabia.png";
+// import unitedKingdom from "../../../../../public/images/United-Kingdom.png";
 
 const LanguagePopoverAnchor = () => {
+  /*
   const anchorItems = [
     {
       title: "English",
@@ -25,9 +26,10 @@ const LanguagePopoverAnchor = () => {
       ),
     },
   ];
+*/
 
   return (
-    <Stack direction="column" spacing={2} pl={3}>
+    /*<Stack direction="column" spacing={2} pl={3}>
       {anchorItems.map((item) => (
         <Stack direction="row-reverse" spacing={3} alignItems="center">
           {item.icon}
@@ -40,7 +42,8 @@ const LanguagePopoverAnchor = () => {
           </Typography>
         </Stack>
       ))}
-    </Stack>
+    </Stack>*/
+    <div>hello world!</div>
   );
 };
 
